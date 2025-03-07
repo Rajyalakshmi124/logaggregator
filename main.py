@@ -14,7 +14,7 @@ if os.path.isdir(folder_path):#checks if the given folder path is a vaild direct
                 else:
                     print("No log file found")
             else:
-                print("Not a log file")
+                print("Not a valid log file")
         print("Processing")
     else:
         print("Invalid path")
