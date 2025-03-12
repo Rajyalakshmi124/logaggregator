@@ -1,31 +1,37 @@
-import os#os interact with system files,checks if a folder exists or list files
+#os module to interact with system files,checks if a folder exists or list files
+import os
+from constants import *
 
-folder_path=input("Enter the folder path: ")#it prompts the user to enter the folder path
-
-if not os.path.isdir(folder_path):#checks if the given folder path is a vaild directory or not
-    print("The provided path is not valid, please provide a valid folder path ")
+#it prompts the user to enter the folder path
+folder_path=input("Enter the folder path: ")
+#checks if the given folder path is a vaild directory or not
+if not os.path.isdir(folder_path):
+    print(f"{INVALID_FOLDER_PATH}") 
 else:
-    files=os.listdir(folder_path) #get the list of files in the folder
+    # if file exists this retrieves a list of files in the folder
+    files=os.listdir(folder_path)
 
-    if not files: #checks if the folder is empty 
-        print("The provided folder is Empty")
+    #checks if the folder is empty 
+    if not files: 
+        print(f"{EMPTY_FOLDER}")
     else:
-        print("Processing")
+        print(f"{PROCESSING}")
+        #count .log files, ensure a proper count of .log files in the given folder
         log_file_count=0
-        Invalid_file_found=0
-
+        #initialize counter for non-log files, count non-log files
+        invalid_file_found=0
+        #loop through each file in the folder
         for file in files:
-            if file.endswith('.log'):
-                log_file_count = log_file_count+1
-            else:
-                Invalid_file_found = Invalid_file_found+1
-           
+            if file.endswith('.log'):#checks if the file has a .log extension 
                 
-        if log_file_count>0:#checks for files
-            print(f"Total Log files found: {log_file_count:}")
-            print(f"Invalid files found: {Invalid_file_found:}")
-        elif log_file_count == 0:
-            print(f"Total Log files found: {log_file_count:}")
-            print(f"Invalid files found: {Invalid_file_found:}")
-            print("The provided folder doesn't have any log files, please provide a valid folder")
+                log_file_count = log_file_count+1 # increment log file count
+            else:
+                invalid_file_found = invalid_file_found+1 #increment invalid file count
+        if log_file_count>0:#check if there are any log files
+            print(f"TOTAL_LOG_FILE_FOUND: {log_file_count:}")
+            print(f"INVALID_FOLDER_COUNT: {invalid_file_found:}")
+        else:
+            print(f"TOTAL_LOG_FILE_FOUND: {log_file_count}")
+            print(f"INVALID_FOLDER_COUNT: {invalid_file_found}")
+            print(f"{NO_LOG_FILES}")
         
