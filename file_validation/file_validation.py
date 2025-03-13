@@ -12,7 +12,6 @@ def file_validation(folder_path):
     #If the folder is empty, return an appropriate message and empty data
     if not files:
         return EMPTY_FOLDER, [], 0, 0
-    #Print a message indicating that processing is happening
     print(PROCESSING)
     # Filter out only `.log` files from the list of files
     log_files = [file for file in files if file.endswith(".log")]
