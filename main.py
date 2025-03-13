@@ -14,3 +14,4 @@ if __name__ == "__main__":
     else:
         print(f"Total Log files found: {log_file_count}")
         print(f"Invalid files found: {invalid_file_count}")
+        
