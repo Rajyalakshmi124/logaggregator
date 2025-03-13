@@ -14,10 +14,9 @@ def file_validation(folder_path):
         return EMPTY_FOLDER, [], 0, 0
     print(PROCESSING)
     # Filter out only `.log` files from the list of files
-    log_files = [file for file in files if file.endswith(".log")]
+    log_files = [file for file in files if file.endswith(f"{LOG_FILE_EXTENSION}")]
      # Count the number of `.log` files
     log_file_count = len(log_files)
      # Count the number of invalid files (total files - log files)
     invalid_file_count = len(files) - log_file_count
-    #Return None,the list of log files, the log file count, and the invalid file count
     return None, log_files, log_file_count, invalid_file_count

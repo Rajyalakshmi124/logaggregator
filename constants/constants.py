@@ -1,6 +1,7 @@
 EMPTY_FOLDER = "The provided folder is Empty"
 INVALID_FOLDER_PATH = "The provided path is not valid, please provide a valid folder path"
 INVALID_FOLDER_COUNT="Invalid files found"
+LOG_FILE_EXTENSION = ".log"
 NO_LOG_FILES = "The provided folder doesn't have any log files, please provide a valid log folder"
 PROCESSING = "Processing"
 TOTAL_LOG_FILE_FOUND = "Total Log files found"
