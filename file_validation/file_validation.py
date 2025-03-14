@@ -1,6 +1,10 @@
 import os
-#Importing constants
-from constants.constants import *
+
+LOG_FILE_EXTENSION = ".log"
+PROCESSING = "Processing"
+EMPTY_FOLDER = "The provided folder is Empty"
+INVALID_FOLDER_PATH = "The provided path is not valid, please provide a valid folder path"
+
 #Checks if the folder is valid and retrieves the file list
 def file_validation(folder_path):
     #Check if the provided folder path is valid or not
