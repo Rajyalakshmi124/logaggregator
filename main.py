@@ -6,7 +6,7 @@ from file_handler.file_handler import get_log_files, merge_log_files
  
 # Importing 'file_validation' function from 'file_validation' module
 from file_validation.file_validation import file_validation
- 
+
 # Importing constants for log folder and output folder from the config file
 from config import LOGS_FOLDER, OUTPUT_FOLDER
  
