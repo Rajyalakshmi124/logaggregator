@@ -1,7 +1,9 @@
 import os
+from log_merge.log_merge import merge_log_files
+
 EMPTY_FOLDER = "The provided folder is Empty"
 LOG_FILE_EXTENSION = ".log"
-from log_merge.log_merge import merge_log_files
+
 #Fetches all log files from the given folder.
 def get_log_files(folder_path):
  

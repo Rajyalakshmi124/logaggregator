@@ -1,5 +1,5 @@
-import os
-
+#os module provides a way to interact with the operating system, allowing you to perform tasks like accessing files and directories
+import os 
 from file_handler.file_handler import get_log_files, merge_log_files
 from file_validation.file_validation import file_validation
 from config import LOGS_FOLDER, OUTPUT_FOLDER
@@ -31,7 +31,7 @@ if __name__ == "__main__":
         if log_files:
             # os.makedirs(folder_path,exist_ok=True)
             output_file = os.path.join(folder_path, "merged_logs.txt")
-            merge_log_files(folder_path, log_files,output_file)
+            merge_log_files(folder_path, log_files, output_file)
             print(f"Merged log file created: {output_file}")
         else:
             print(f"{NO_LOG_FILES}")
