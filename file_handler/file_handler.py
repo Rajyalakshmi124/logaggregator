@@ -26,8 +26,5 @@ def get_log_files(folder_path):
         #Check if the file has the correct log file extension
         if file.endswith(LOG_FILE_EXTENSION):
             log_files.append(file)
-        else:
-            #Count invalid files
-            invalid_file_count += 1
  
     return log_files, invalid_file_count
