@@ -1,22 +1,18 @@
 import os
-
 LOG_FILE_EXTENSION = ".log"
-PROCESSING = "Processing"
-EMPTY_FOLDER = "The provided folder is Empty"
-INVALID_FOLDER_PATH = "The provided path is not valid, please provide a valid folder path"
 
 #Checks if the folder is valid and retrieves the file list
 def file_validation(folder_path):
     #Check if the provided folder path is valid or not
     if not os.path.isdir(folder_path):
         #Return an error message, an empty list, and 0 counts
-        return INVALID_FOLDER_PATH, [], 0, 0
+        return "The provided path is not valid, please provide a valid folder path", [], 0, 0
     #Retrieve the list of files in the folder
     files = os.listdir(folder_path)
     #If the folder is empty, return an appropriate message and empty data
     if not files:
-        return EMPTY_FOLDER, [], 0, 0
-    print(PROCESSING)
+        return "The provided folder is Empty", [], 0, 0
+    print("Processing")
     # Filter out only `.log` files from the list of files
     log_files = [file for file in files if file.endswith(f"{LOG_FILE_EXTENSION}")]
      # Count the number of `.log` files

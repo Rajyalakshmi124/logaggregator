@@ -1,4 +1,3 @@
-#Datetime module that permits for the control of datetime objects
 from datetime import datetime
 #Extracts and parses the timestamp from a log line.
 def parse_timestamp(line):

@@ -1,7 +1,6 @@
 import os
 from log_merge.log_merge import merge_log_files
 
-EMPTY_FOLDER = "The provided folder is Empty"
 LOG_FILE_EXTENSION = ".log"
 
 #Fetches all log files from the given folder.
@@ -12,7 +11,7 @@ def get_log_files(folder_path):
  
     #If no files are found, print a message and return an empty list
     if not files:
-        print(EMPTY_FOLDER)
+        print("The provided folder is Empty")
         return [], 0
  
     #Lists to store valid log files

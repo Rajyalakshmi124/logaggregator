@@ -1,23 +1,7 @@
-# Importing the 'os' module to work with file and directory paths
 import os
- 
-# Importing functions 'get_log_files' and 'merge_log_files' from the 'file_handler' module
 from file_handler.file_handler import get_log_files, merge_log_files
- 
-# Importing 'file_validation' function from 'file_validation' module
 from file_validation.file_validation import file_validation
-
-# Importing constants for log folder and output folder from the config file
 from config import LOGS_FOLDER, OUTPUT_FOLDER
- 
-# Defining constant messages for different scenarios
-EMPTY_FOLDER = "The provided folder is Empty"  
-INVALID_FOLDER_PATH = "The provided path is not valid, please provide a valid folder path" 
-INVALID_FOLDER_COUNT = "Invalid files found"  
-LOG_FILE_EXTENSION = ".log"  
-NO_LOG_FILES = "The provided folder doesn't have any log files, please provide a valid log folder" 
-PROCESSING = "Processing" 
-TOTAL_LOG_FILE_FOUND = "Total Log files found" 
  
 # Main function to handle log file validation and merging
 def main():
@@ -63,7 +47,7 @@ def main():
  
         # If no log files are found, print the appropriate message
         else:
-            print(NO_LOG_FILES)
+            print("The provided folder doesn't have any log files, please provide a valid log folder")
  
 # Entry point for the script, ensures 'main()' function runs when script is executed directly
 if __name__ == "__main__":
