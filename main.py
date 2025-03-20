@@ -2,6 +2,7 @@ import os
 from file_handler.file_handler import get_log_files, merge_log_files
 from file_validation.file_validation import file_validation
 from config import LOGS_FOLDER, OUTPUT_FOLDER
+from audit_table.audit import log_audit_entry
  
 # Main function to handle log file validation and merging
 def main():
@@ -32,18 +33,11 @@ def main():
                 # Calling 'merge_log_files' function to merge logs and save the output
                 merge_log_files(folder_path, log_files, output_file)
                 print(f"Merged log file created: {output_file}")
- 
-            # Handling 'PermissionError' in case the user doesn't have write access to the folder
-            except PermissionError:
-                print(f"Permission denied: '{output_file}'. Please choose a different folder.")
- 
-                # Asking the user to provide a different folder for storing the merged file
-                output_folder = input("Please specify a different folder where you want to store the output merged file: ")
-                output_file = os.path.join(output_folder, "merged_logs.txt")
- 
-                # Merging logs again in the new folder
-                merge_log_files(folder_path, log_files, output_file)
-                print(f"Merged log file created: {output_file}")
+                log_audit_entry(folder_path, log_files, output_file)
+
+            except Exception as e:
+                log_audit_entry(folder_path, log_files, None, error_message)
+
  
         # If no log files are found, print the appropriate message
         else:
