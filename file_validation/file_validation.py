@@ -1,5 +1,5 @@
 import os
-LOG_FILE_EXTENSION = ".log"
+FILE_EXTENSION = ".log"
 
 #Checks if the folder is valid and retrieves the file list
 def file_validation(folder_path):
@@ -14,7 +14,7 @@ def file_validation(folder_path):
         return "The provided folder is Empty", [], 0, 0
     print("Processing")
     # Filter out only `.log` files from the list of files
-    log_files = [file for file in files if file.endswith(f"{LOG_FILE_EXTENSION}")]
+    log_files = [file for file in files if file.endswith(f"{FILE_EXTENSION}")]
      # Count the number of `.log` files
     log_file_count = len(log_files)
      # Count the number of invalid files (total files - log files)

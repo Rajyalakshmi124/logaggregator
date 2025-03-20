@@ -1,7 +1,7 @@
 import os
 from log_merge.log_merge import merge_log_files
 
-LOG_FILE_EXTENSION = ".log"
+FILE_EXTENSION = ".log"
 
 #Fetches all log files from the given folder.
 def get_log_files(folder_path):
@@ -23,7 +23,7 @@ def get_log_files(folder_path):
     #Loop through all files in the folder
     for file in files:
         #Check if the file has the correct log file extension
-        if file.endswith(LOG_FILE_EXTENSION):
+        if file.endswith(FILE_EXTENSION):
             log_files.append(file)
  
     return log_files, invalid_file_count
