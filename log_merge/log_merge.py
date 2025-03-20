@@ -18,10 +18,10 @@ def merge_log_files(folder_path, log_files, output_file):
                 #Add the lines to the list
                 all_lines.extend(lines)
  
-        except Exception as e:
+        except Exception as exception:
             #Print an error message if the file cannot be read
-            #exception is stored in e to know the error
-            print(f"Error reading {log_file}: {e}")
+            #exception is stored in exception to know the error
+            print(f"Error reading {log_file}: {exception}")
  
     #Sort all log lines based on timestamps
     all_lines.sort(key=parse_timestamp)
