@@ -30,7 +30,8 @@ def main():
                 merge_log_files(folder_path, log_files, output_file)
                 print(f"Merged log file created: {output_file}")
                 log_audit_entry(folder_path, log_files, output_file)
-
+            #except handles the exception if it  occurs
+            #e is an object of Exception
             except Exception as e:
                 log_audit_entry(folder_path, log_files, None, error_message)
         else:
