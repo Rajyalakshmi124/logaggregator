@@ -3,7 +3,7 @@ from database.db_connection import get_db
  
 def log_audit_entry(folder_path, log_files, output_file, error_message=None):
     db = get_db()
-    audit_collection = db["audit"]  # Table name
+    audit_collection = db["audit"]  # collection name
  
     audit_entry = {
         "folder_path": folder_path,
