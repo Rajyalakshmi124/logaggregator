@@ -12,8 +12,8 @@ def main():
     error_message, log_files, log_file_count, invalid_file_count = file_validation(folder_path)
  
     if error_message:
-        log_audit_entry(folder_path, log_files, None, error_message)
         print(error_message)
+        log_audit_entry(folder_path, log_files, None, error_message)
     else:
         #Print the total number of log files found and invalid files count
         print(f"Total Log files found: {log_file_count}")
@@ -35,9 +35,9 @@ def main():
             except Exception as e:
                 log_audit_entry(folder_path, log_files, None, error_message)
         else:
-            log_audit_entry(folder_path, log_files, None, "The provided folder doesn't have any log files, please provide a valid log folder")
             print("The provided folder doesn't have any log files, please provide a valid log folder")
- 
+            log_audit_entry(folder_path, log_files, None, "The provided folder doesn't have any log files, please provide a valid log folder")
+           
 # Entry point for the script, ensures 'main()' function runs when script is executed directly
 if __name__ == "__main__":
     main()
